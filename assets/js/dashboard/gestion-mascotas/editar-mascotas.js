@@ -37,7 +37,7 @@ function mostrarVentanaModal() {
 
 async function obtenerPerrito() {
     try {
-        const respuesta = await fetch(`http://localhost:3000/perritos/${perritoId}`);
+        const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`);
         if(!respuesta.ok) {
             console.log('Error al solicitar perrito por su id, codigo de estado: ', respuesta.status);
             return;
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const respuesta = await fetch(`http://localhost:3000/perritos/${perritoId}`, {
+            const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`, {
                 method: 'PUT',
                 body: formData
             });

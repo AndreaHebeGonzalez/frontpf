@@ -81,7 +81,7 @@ function capturandoDatos() {
 
 async function soliEnvioDatos() {
     try {
-        const respuesta = await fetch('http://localhost:3000/adoptantes', {
+        const respuesta = await fetch('https://andreagzlez.alwaysdata.net/adoptantes', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -111,7 +111,7 @@ async function soliEnvioDatos() {
 
 async function cambiarEstadoPerrito() {
     try {
-        const respuesta = await fetch(`http://localhost:3000/perritos/cambiarestado/${ID_perrito}`, {
+        const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/cambiarestado/${ID_perrito}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json"

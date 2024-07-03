@@ -2,7 +2,7 @@
 const contenedorMascotas = document.querySelector('.mascotas__grid');
 
 async function solicitarPerritos() {
-    const respuesta = await fetch('http://localhost:3000/perritos/libre-en-proceso');
+    const respuesta = await fetch('https://andreagzlez.alwaysdata.net/perritos/libre-en-proceso');
     if(!respuesta.ok) {
         console.error('Error al filtrar perrito por estado libre y en proceso', respuesta.status);
         return;
@@ -14,7 +14,7 @@ async function solicitarPerritos() {
 function iterarPerritosLista(listaPerritos) {
     listaPerritos.map((perrito) => {
 
-        const urlbase = "http://localhost:3000/";
+        const urlbase = "https://andreagzlez.alwaysdata.net/";
         const urlCompleta= `${urlbase}${perrito.url_img}`;
 
         const mascotaContenedor = document.createElement('div');

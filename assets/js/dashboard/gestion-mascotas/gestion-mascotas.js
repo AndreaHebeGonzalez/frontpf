@@ -1,7 +1,7 @@
 
 const contenedorPadre = document.querySelector('.contenido-dinamico');
 
-const url = 'http://localhost:3000/perritos'
+const url = 'https://andreagzlez.alwaysdata.net/perritos'
 
 async function solicitarPerritos(url) {
     try {
@@ -23,7 +23,7 @@ function iterarPerritosLista(perritosLista) {
         let indicefinal = perrito.fecha_ingreso.indexOf('T');
         let fechaIngreso = perrito.fecha_ingreso.slice(0, indicefinal);
 
-        const urlbase = "http://localhost:3000/";
+        const urlbase = "https://andreagzlez.alwaysdata.net/";
         const urlCompleta= `${urlbase}${perrito.url_img}`;
 
         const mascotaContenedor = document.createElement('div');
@@ -139,7 +139,7 @@ function mostrarVentanaModal() {
 
 async function eliminarPerrito(id, contenedorMascota) {
     try {
-        const respuesta = await fetch(`http://localhost:3000/perritos/${id}`, {
+        const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${id}`, {
             method: 'DELETE',
         });
         if (!respuesta.ok) {
@@ -213,12 +213,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     porTamaño.addEventListener('input', () => {
         if(porTamaño.value === 'pequeño') {
-            const urlFTamaño = 'http://localhost:3000/perritos/filtrarportamano/pequeno';
+            const urlFTamaño = 'https://andreagzlez.alwaysdata.net/perritos/filtrarportamano/pequeno';
             limpiarRenderizado();
             renderizarCards(urlFTamaño);
             
         }else if(porTamaño.value === 'mediano' || porTamaño.value === 'grande')  {
-            const urlFTamaño = `http://localhost:3000/perritos/filtrarportamano/${porTamaño.value}`;
+            const urlFTamaño = `https://andreagzlez.alwaysdata.net/perritos/filtrarportamano/${porTamaño.value}`;
             limpiarRenderizado();
             renderizarCards(urlFTamaño);
         }else {
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     porEstadoAdopcion.addEventListener('input', () => {
         if(porEstadoAdopcion.value != '') {
-            const urlEstadoAdopcion = `http://localhost:3000/perritos/filtrarporestado/${porEstadoAdopcion.value}`;
+            const urlEstadoAdopcion = `https://andreagzlez.alwaysdata.net/perritos/filtrarporestado/${porEstadoAdopcion.value}`;
             limpiarRenderizado();
             renderizarCards(urlEstadoAdopcion);
         } else {

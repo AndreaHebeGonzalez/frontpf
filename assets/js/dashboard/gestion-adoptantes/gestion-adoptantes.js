@@ -1,6 +1,6 @@
 const contenedorPadre = document.querySelector(".adoptantes");
 
-let url = "http://localhost:3000/adoptantes";
+let url = "https://andreagzlez.alwaysdata.net/adoptantes";
 
 async function solicitarAdoptantes(url) {
   try {
@@ -78,7 +78,7 @@ function mostrarVentanaModal() {
 /* Consulta para eliminar adoptante */
 async function eliminarAdoptante(id, contenedorAdoptante) {
   try {
-    const respuesta = await fetch(`http://localhost:3000/adoptantes/${id}`, {
+    const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/adoptantes/${id}`, {
       method: "DELETE",
     });
     if (!respuesta.ok) {
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   porVivienda.addEventListener("input", () => {
     if (porVivienda.value != "") {
-      const urlVivienda = `http://localhost:3000/adoptantes/filtrarporvivienda/${porVivienda.value}`;
+      const urlVivienda = `https://andreagzlez.alwaysdata.net/adoptantes/filtrarporvivienda/${porVivienda.value}`;
       limpiarRenderizado();
       renderizarAdoptantes(urlVivienda);
     } else {
