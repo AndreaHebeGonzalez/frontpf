@@ -1,9 +1,15 @@
+body {
+  min-height: 100vh;
+}
+
 input,
 button,
 select,
 textarea {
   outline: none;
 }
+
+
 
 [class*="heading"] {
   font-size: 3rem;
