@@ -1,5 +1,6 @@
 body {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 input,
@@ -8,8 +9,6 @@ select,
 textarea {
   outline: none;
 }
-
-
 
 [class*="heading"] {
   font-size: 3rem;
@@ -331,6 +330,10 @@ h3 {
 }
 
 /* Formularios ======================>*/
+
+main {
+  flex: 1;
+}
 
 @media (min-width: 665px) {
   main.seccion-formulario {
