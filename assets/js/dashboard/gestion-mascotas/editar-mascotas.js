@@ -28,19 +28,24 @@ function mostrarVentanaModal() {
     setTimeout(() => {
         ventanaModal.classList.remove('mostrar-ventana-modal'); /* Saco ventana modal despues de 4 segundos */
         setTimeout(() => {
-            location.reload(); // Recarga la página
-        }, 500); // Espera 500ms para asegurarse de que el modal esté completamente cerrado antes de recargar
+            location.reload(); 
+        }, 500); 
     }, 3000);
 };
 
 //Solicito la informacion del perrito por su id guardada en la base de datos
 
 async function obtenerPerrito() {
+    const token = localStorage.getItem('token');
     try {
-        const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`);
+        const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        });
         if(!respuesta.ok) {
             console.log('Error al solicitar perrito por su id, codigo de estado: ', respuesta.status);
-            return;
+            return null;
         };
         const data = await respuesta.json();
         return data;
@@ -82,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
  */
         console.log(perritoActualizado);
+        const token = localStorage.getItem('token');
         const formData = new FormData();
         for(const key in perritoActualizado) {
             formData.append(key, perritoActualizado[key]);
@@ -90,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`, {
                 method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 body: formData
             });
             if(!respuesta.ok) {
