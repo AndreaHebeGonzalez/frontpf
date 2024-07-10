@@ -40,7 +40,7 @@ async function obtenerPerrito() {
     try {
         const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`, {
             headers: {
-                'Authorization': `Bearer ${token}`,
+                'authorization': `Bearer ${token}`,
             },
         });
         if(!respuesta.ok) {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${perritoId}`, {
                 method: 'PUT',
                 headers: {
-                    'Authorization': `Bearer ${token}`,
+                    'authorization': `Bearer ${token}`,
                 },
                 body: formData
             });

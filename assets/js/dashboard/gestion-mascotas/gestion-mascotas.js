@@ -7,8 +7,9 @@ async function solicitarPerritos(url) {
     const token = localStorage.getItem('token');
     try {
         const respuesta = await fetch(url, {
+            method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'authorization': `Bearer ${token}`
             }
         }); 
         if (!respuesta.ok) {
@@ -148,7 +149,7 @@ async function eliminarPerrito(id, contenedorMascota) {
         const respuesta = await fetch(`https://andreagzlez.alwaysdata.net/perritos/${id}`, {
             method: 'DELETE',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'authorization': `Bearer ${token}`
             }
         });
         if (!respuesta.ok) {

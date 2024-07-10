@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const respuesta = await fetch('https://andreagzlez.alwaysdata.net/perritos', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${token}`,
+                    'authorization': `Bearer ${token}`,
                 },
                 body: formData
             });
