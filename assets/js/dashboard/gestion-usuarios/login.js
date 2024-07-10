@@ -85,7 +85,7 @@ formulario.addEventListener('submit', async (e) => {
 
         if(autenticacion.auth) {
             localStorage.setItem('token', autenticacion.token);
-            window.location.href = 'http://127.0.0.1:5501/dashboard/gestion-mascotas/gestion-mascotas.html';
+            window.location.href = 'https://patitasfelices-omega.vercel.app/dashboard/gestion-mascotas/gestion-mascotas.html';
         } else {
             console.error('Error en la autenticación:', autenticacion.error);
         };
