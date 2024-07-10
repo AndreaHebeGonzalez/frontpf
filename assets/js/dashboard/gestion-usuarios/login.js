@@ -71,7 +71,7 @@ formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
     console.log(datosUsuario);
     try {
-        const respuesta =  await fetch('http://localhost:3000/auth/login', {
+        const respuesta =  await fetch('https://andreagzlez.alwaysdata.net/auth/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

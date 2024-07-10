@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const {rPassword, ...usuario} = datosUsuario;
         console.log(usuario);
         try {
-            const respuesta =  await fetch('http://localhost:3000/auth/register', {
+            const respuesta =  await fetch('https://andreagzlez.alwaysdata.net/auth/register', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
